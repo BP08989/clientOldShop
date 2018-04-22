@@ -1,0 +1,19 @@
+b_pashkevich_catalog_homepage:
+    path:     /
+    defaults: { _controller: BPashkevichCatalogBundle:Default:index }
+
+b_pashkevich_catalog_product_show:
+    path:     /product/show/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Product:index }
+
+b_pashkevich_catalog_category_index:
+    path:     /category/
+    defaults: { _controller: BPashkevichCatalogBundle:Category:index }
+
+b_pashkevich_catalog_category_show:
+    path:     /category/show/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Category:show }
+
+b_pashkevich_catalog_configurableproduct:
+        resource: "@BPashkevichCatalogBundle/Resources/config/routing/configurableproduct.yml"
+        prefix:   /configurableproduct

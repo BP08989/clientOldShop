@@ -1,0 +1,7 @@
+b_pashkevich_catalog:
+    resource: "@BPashkevichCatalogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
