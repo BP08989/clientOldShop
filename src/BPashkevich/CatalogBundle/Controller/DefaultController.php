@@ -29,4 +29,25 @@ class DefaultController extends Controller
             'isProductInCart' => $isProductInCart,
         ));
     }
+
+    public function searchAction(Request $request)
+    {
+
+//        die(var_dump($request->get('search')));
+        $categories = Methods::sendRequest('http://127.0.0.1:8000/api/getCategoryShortInfo');
+        $products = Methods::sendRequest('http://127.0.0.1:8000/api/getProductsByParam', array(
+            'value' => $request->get('search'),
+        ));
+        $isProductInCart = array();
+        foreach ($products as $product) {
+            $isProductInCart[$product['id']] = array_search($product['id'], $_SESSION['cart']);
+        }
+
+        return $this->render('default/home.html.twig', array(
+            'categories' => $categories,
+            'products' => $products,
+            'configurableProducts' => array(),
+            'isProductInCart' => $isProductInCart,
+        ));
+    }
 }

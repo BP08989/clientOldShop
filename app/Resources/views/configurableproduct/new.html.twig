@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Configurable Product creation</h1>
+
+    <form action="{{ path('configurableproduct_save') }}" method="post">
+
+        {% for requireAttribute in requireAttributes %}
+            <label for="{{ requireAttribute.name }}" style="min-width: 120px;  margin-left: -10px;">{{ requireAttribute.name }}</label>
+            <input type="text" name="{{ requireAttribute.id }}" id="{{ requireAttribute.name }}" style=" margin-left: -5px;"> <br>
+        {% endfor %}
+
+        <label for="image" style="min-width: 120px;  margin-left: -10px;">Image</label>
+        <input type="text" name="image" id="image" style=" margin-left: -5px;"> <br>
+
+        <p><select size="1" name="category">
+                {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}
+            </select></p>
+
+        {% for notRequireAttribute in notRequireAttributes %}
+            <input type="checkbox" name="{{ notRequireAttribute.id }}" id="{{ notRequireAttribute.name }}">
+             {{ notRequireAttribute.name }}<br>
+        {% endfor %}
+
+        <button class="shopping-cart" type="submit" style="width: 330px;">Create</button>
+    </form>
+
+    <ul>
+        <li>
+            <a href="{{ path('configurableproduct_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -4,7 +4,7 @@ b_pashkevich_catalog_homepage:
 
 b_pashkevich_catalog_product_show:
     path:     /product/show/{id}
-    defaults: { _controller: BPashkevichCatalogBundle:Product:index }
+    defaults: { _controller: BPashkevichCatalogBundle:Product:show }
 
 b_pashkevich_catalog_category_index:
     path:     /category/
@@ -14,6 +14,30 @@ b_pashkevich_catalog_category_show:
     path:     /category/show/{id}
     defaults: { _controller: BPashkevichCatalogBundle:Category:show }
 
+b_pashkevich_catalog_cart_show:
+    path:     /cart
+    defaults: { _controller: BPashkevichCatalogBundle:Cart:index }
+
+b_pashkevich_catalog_cart_add:
+    path:     /cart/add/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Cart:add }
+
+b_pashkevich_catalog_cart_remove:
+    path:     /cart/remove/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Cart:remove }
+
+b_pashkevich_catalog_cart_clear:
+    path:     /cart/clear
+    defaults: { _controller: BPashkevichCatalogBundle:Cart:clear }
+
 b_pashkevich_catalog_configurableproduct:
-        resource: "@BPashkevichCatalogBundle/Resources/config/routing/configurableproduct.yml"
-        prefix:   /configurableproduct
+    path:     /configurableproduct/show/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:ConfigurableProduct:show }
+
+b_pashkevich_catalog_admin_home:
+    path:     /admin/home
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Default:index }
+
+b_pashkevich_catalog_search:
+    path:     /search
+    defaults: { _controller: BPashkevichCatalogBundle:Default:search }

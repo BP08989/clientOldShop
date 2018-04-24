@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Simple Product creation</h1>
+
+    {% if id is defined %}
+            <form action="{{ path('product_save_child', {'id': id }) }}" method="post">
+    {% else %}
+            <form action="{{ path('product_save') }}" method="post">
+    {% endif %}
+
+        {% for attribute in attributes %}
+            <label for="{{ attribute.name }}" style="min-width: 120px;  margin-left: -10px;">{{ attribute.name }}</label>
+            <input type="text" name="{{ attribute.id }}" id="{{ attribute.name }}" style=" margin-left: -5px;"> <br>
+        {% endfor %}
+
+        <label for="image" style="min-width: 120px;  margin-left: -10px;">Image</label>
+        <input type="text" name="image" id="image" style=" margin-left: -5px;"> <br>
+
+        {% if configAttr is defined %}
+            {% for key, attribute in configAttr %}
+            <p>
+                <label for="{{ key }}" style="min-width: 120px;  margin-left: -10px;">{{ key }}</label>
+                <select size="1" name="{{ attribute[0]['attribute_id'] }}">
+                    {% for value in attribute %}
+                        <option value="{{ value['value'] }}">{{ value['value'] }}</option>
+                    {% endfor %}
+                </select>
+            </p>
+            {% endfor %}
+        {% endif %}
+
+        {% if categories is defined %}
+        <p>
+            <select size="1" name="category">
+                {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        {% endif %}
+        <br>
+        <button class="shopping-cart" type="submit" style="width: 330px;">Create</button>
+    </form>
+
+    <ul>
+        <li>
+            <a href="{{ path('configurableproduct_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

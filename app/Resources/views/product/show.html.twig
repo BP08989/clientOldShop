@@ -1,0 +1,79 @@
+{% extends 'default/main.html.twig' %}
+
+{% block title %}
+    Symfony Shop
+{% endblock %}
+
+{% block stylesheets %}
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/styles.css') }}"/>
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block header %}
+    {{ data[0].value }}
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="metrics text-muted">
+                <img src="{{ product.img }}" alt="img" style="width: 400px; height: 400px;"><br>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="metrics text-muted">
+                <div class="description">
+                    {% for value in data %}
+                        {{ value.name }}:
+                        {{ value.value }}<br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="metrics text-muted">
+                <div class="description">
+                    Category:
+                    <a href="/category/show/{{ categoryName.id }}">{{ categoryName.name }}</a>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4" style="visibility: hidden;">
+            <div class="metrics text-muted">
+                <div class="description">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="metrics text-muted">
+                <div class="description">
+                </div>
+                {% if isConsist == false %}
+                <a href="/cart/add/{{ product.id }}">
+                    <input type="button" class="shopping-cart" value="Add to Cart">
+                </a>
+                {% else %}
+                <a href="/cart/remove/{{ product.id }}">
+                    <input type="button" class="shopping-cart" value="Remove from Cart">
+                </a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-sm-4" style="visibility: hidden;">
+            <div class="metrics text-muted">
+                <div class="description">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

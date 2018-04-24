@@ -30,15 +30,14 @@
                 {% else %}
                     <li><a href="/login">Profile</a></li>
                 {% endif %}
-                <li><a href="/cart">My cart</a></li>
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     <li><a href="/logout">Sign Out</a></li>
                 {% else %}
                     <li><a href="/login">Sign In</a></li>
                 {% endif %}
             </ul>
-            <form class="navbar-form navbar-right" method="post" action="/search">
-                <input type="text" id="search" class="form-control" placeholder="Search..." name="search">
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
             </form>
         </div>
     </div>
@@ -47,13 +46,39 @@
 <main class="container-fluid" id="main">
     <div class="row">
         <div class="col-lg-2 sidebar sidebar-offcanvas" id="sidebar">
-            <h2><a href="/category" style="color: #5EAD2A">Categories</a></h2>
+            <h2><a href="/admin/home" style="color: #5EAD2A">Panel</a></h2>
             <ul class="nav nav-sidebar">
                 {% block menu %}{% endblock %}
-                {% for category in categories %}
-                    <li><a href="/category/show/{{ category.id }}"><span class="menu-name">
-                                {{ category.name }}</span></a></li>
-                {% endfor %}
+                <li>
+                    <a href="/admin/attribute/">
+                        <span class="menu-name">Attributes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/attributeValue/">
+                        <span class="menu-name">Attribute Values</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/category/">
+                        <span class="menu-name">Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/product/">
+                        <span class="menu-name">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/configProduct/">
+                        <span class="menu-name">Configurable Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/user/">
+                        <span class="menu-name">Users</span>
+                    </a>
+                </li>
             </ul>
 
         </div>

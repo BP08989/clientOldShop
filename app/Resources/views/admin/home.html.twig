@@ -1,4 +1,4 @@
-{% extends 'default/main.html.twig' %}
+{% extends 'default/admin.html.twig' %}
 
 {% block title %}
     Symfony Shop
@@ -13,17 +13,10 @@
 {% endblock %}
 
 {% block header %}
-    Categories
+    Admin
 {% endblock %}
 
 {% block main %}
     <div class="row">
-        {% for category in categories %}
-            <div class="col-sm-3">
-                <div class="metrics text-muted">
-                    <h2><a href="/category/show/{{ category['id'] }}">{{ category['name'] }}</a></h2>
-                </div>
-            </div>
-        {% endfor %}
     </div>
 {% endblock %}

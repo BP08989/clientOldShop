@@ -22,14 +22,14 @@
             <div class="col-sm-3">
                 <div class="metrics text-muted" href="#map1">
                     <h2>{{ product.name }}</h2>
-                    <a href="{{ path('configurableproduct_show', { 'id': product.id }) }}">
+                    <a href="{{ path('b_pashkevich_catalog_configurableproduct', { 'id': product.id }) }}">
                         <img src="{{ product.img }}" alt="img" style="width: 220px; height: 220px;">
                     </a><br>
                     <div class="description">
                         {{ product.shortDescription }}<br>
                         {{ product.price }} $
                     </div>
-                    <a href="{{ path('configurableproduct_show', { 'id': product.id }) }}">
+                    <a href="{{ path('b_pashkevich_catalog_configurableproduct', { 'id': product.id }) }}">
                         <input type="button" class="shopping-cart" value="Select config">
                     </a>
                 </div>
