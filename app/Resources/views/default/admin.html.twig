@@ -26,19 +26,11 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li><a href="/user/{{ app.user.id }}/show">Profile</a></li>
-                {% else %}
-                    <li><a href="/login">Profile</a></li>
-                {% endif %}
-                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     <li><a href="/logout">Sign Out</a></li>
                 {% else %}
                     <li><a href="/login">Sign In</a></li>
                 {% endif %}
             </ul>
-            <form class="navbar-form navbar-right">
-                <input type="text" class="form-control" placeholder="Search...">
-            </form>
         </div>
     </div>
 </nav>
@@ -65,7 +57,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/product/">
+                    <a href="/admin/product">
                         <span class="menu-name">Products</span>
                     </a>
                 </li>

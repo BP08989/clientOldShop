@@ -34,10 +34,22 @@ b_pashkevich_catalog_configurableproduct:
     path:     /configurableproduct/show/{id}
     defaults: { _controller: BPashkevichCatalogBundle:ConfigurableProduct:show }
 
+b_pashkevich_catalog_search:
+    path:     /search
+    defaults: { _controller: BPashkevichCatalogBundle:Default:search }
+
 b_pashkevich_catalog_admin_home:
     path:     /admin/home
     defaults: { _controller: BPashkevichCatalogBundle:Admin/Default:index }
 
-b_pashkevich_catalog_search:
-    path:     /search
-    defaults: { _controller: BPashkevichCatalogBundle:Default:search }
+b_pashkevich_catalog_admin_login:
+    path:     /admin/login
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Default:login }
+
+b_pashkevich_catalog_admin_logout:
+    path:     /admin/logout
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Default:logout }
+
+b_pashkevich_catalog_admin_product:
+    path:     /admin/product
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Product:index }
