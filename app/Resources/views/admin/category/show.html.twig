@@ -1,0 +1,63 @@
+{% extends 'default/main.html.twig' %}
+
+{% block title %}
+    Symfony Shop
+{% endblock %}
+
+{% block stylesheets %}
+    <link type="text/css" rel="stylesheet" href="../../css/styles.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap.css"/>
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block header %}
+    {{ category.name }}
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        {% for product in configurableProducts %}
+            <div class="col-sm-3">
+                <div class="metrics text-muted" href="#map1">
+                    <h2>{{ product.name }}</h2>
+                    <a href="{{ path('b_pashkevich_catalog_configurableproduct', { 'id': product.id }) }}">
+                        <img src="{{ product.img }}" alt="img" style="width: 220px; height: 220px;">
+                    </a><br>
+                    <div class="description">
+                        {{ product.shortDescription }}<br>
+                        {{ product.price }} $
+                    </div>
+                    <a href="{{ path('b_pashkevich_catalog_configurableproduct', { 'id': product.id }) }}">
+                        <input type="button" class="shopping-cart" value="Select config">
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+
+        {% for product in products %}
+            <div class="col-sm-3">
+                <div class="metrics text-muted" href="#map1">
+                    <h2>{{ product.name }}</h2>
+                    <a href="{{ path('b_pashkevich_catalog_product_show', { 'id': product.id }) }}">
+                        <img src="{{ product.img }}" alt="img" style="width: 220px; height: 220px;">
+                    </a><br>
+                    <div class="description">
+                        {{ product.shortDescription }}<br>
+                        {{ product.price }} $
+                    </div>
+                    {% if isProductInCart[product.id] == 'false' %}
+                        <a href="/cart/remove/{{ product.id }}">
+                            <input type="button" class="shopping-cart" value="Remove from Cart">
+                        </a>
+                    {% else %}
+                        <a href="/cart/add/{{ product.id }}">
+                            <input type="button" class="shopping-cart" value="Add to Cart">
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -53,3 +53,47 @@ b_pashkevich_catalog_admin_logout:
 b_pashkevich_catalog_admin_product:
     path:     /admin/product
     defaults: { _controller: BPashkevichCatalogBundle:Admin/Product:index }
+
+b_pashkevich_catalog_admin_product_edit:
+    path:     /admin/product/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Product:edit   }
+
+b_pashkevich_catalog_admin_configurableProduct:
+    path:     /admin/configurableProduct
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/ConfigurableProduct:index }
+
+b_pashkevich_catalog_admin_configurableProduct_edit:
+    path:     /admin/configurableProduct/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/ConfigurableProduct:edit   }
+
+b_pashkevich_catalog_admin_user:
+    path:     /admin/user
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/User:index }
+
+b_pashkevich_catalog_admin_user_edit:
+    path:     /admin/user/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/User:edit }
+
+b_pashkevich_catalog_admin_attribute:
+    path:     /admin/attribute
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Attribute:index }
+
+b_pashkevich_catalog_admin_attribute_edit:
+    path:     /admin/attribute/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Attribute:edit }
+
+b_pashkevich_catalog_admin_attributeValue:
+    path:     /admin/attributeValue
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/AttributeValue:index }
+
+b_pashkevich_catalog_admin_attributeValue_edit:
+    path:     /admin/attributeValue/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/AttributeValue:edit }
+
+b_pashkevich_catalog_admin_category:
+    path:     /admin/category
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Category:index }
+
+b_pashkevich_catalog_admin_category_edit:
+    path:     /admin/category/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Category:edit }

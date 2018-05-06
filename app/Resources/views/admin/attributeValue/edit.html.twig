@@ -1,0 +1,44 @@
+{% extends 'default/admin.html.twig' %}
+
+{% block title %}
+    Symfony Shop
+{% endblock %}
+
+{% block stylesheets %}
+    <link type="text/css" rel="stylesheet" href="../../css/styles.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap.css"/>
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block header %}
+    Attribute
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3">
+            <div class="metrics text-muted" href="#map1">
+                <form method="post" action="/admin/attribute/save">
+                    <label for="value">Value: </label>
+                    <input type="text" id="value" class="form-control" name="value" value="{{ attributeValue.value }}">
+
+                    <label for="attribute">Attribute: </label>
+                    <br>
+                    <select size="1" name="attribute" id="attribute">
+                        {% for attribute in attributes %}
+                            <option value="{{ attribute.id }}">{{ attribute.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <button class="shopping-cart" type="submit" style="width: 330px;">Save</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-3">
+        </div>
+    </div>
+{% endblock %}

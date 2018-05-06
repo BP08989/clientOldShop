@@ -1,0 +1,50 @@
+{% extends 'default/admin.html.twig' %}
+
+{% block title %}
+    Symfony Shop
+{% endblock %}
+
+{% block stylesheets %}
+    <link type="text/css" rel="stylesheet" href="../../css/styles.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap.css"/>
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block header %}
+    Product
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3">
+            <div class="metrics text-muted" href="#map1">
+                <form method="post" action="/admin/save">
+                    <label for="img">Image URL: </label>
+                    <input type="url" id="img" class="form-control" name="img" value="{{ product.img }}">
+
+                    {% for value in data %}
+                        <label for="{{ value.name }}">{{ value.name }}: </label>
+                        <input type="text" id="{{ value.name }}" class="form-control" name="{{ value.name }}"
+                               value="{{ value.value }}">
+                    {% endfor %}
+
+                    <label for="category">Category: </label>
+                    <br>
+                    <select size="1" name="category" id="category">
+                        {% for category in categories %}
+                            <option value="{{ category.id }}">{{ category.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <button class="shopping-cart" type="submit" style="width: 330px;">Save</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-3">
+        </div>
+    </div>
+{% endblock %}

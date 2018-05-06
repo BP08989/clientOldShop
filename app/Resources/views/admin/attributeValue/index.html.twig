@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block header %}
-    Products
+    Users
 {% endblock %}
 
 {% block main %}
@@ -22,7 +22,7 @@
             <div class="metrics text-muted" href="#map1">
                 <h2>
                     <a href="/new">
-                        Add Product
+                        Add Attribute Value
                     </a>
                 </h2>
             </div>
@@ -31,7 +31,7 @@
             <div class="metrics text-muted" href="#map1">
                 <h2>
                     <a href="/new">
-                        Delete ALL Products
+                        Delete ALL Values
                     </a>
                 </h2>
             </div>
@@ -40,17 +40,16 @@
     <hr>
 
     <div class="row">
-        {% for product in products %}
+        {% for attributeValue in attributeValues %}
             <div class="col-sm-3">
                 <div class="metrics text-muted" href="#map1">
-                    <h2>{{ product.name }}</h2>
-                    <a href="{{ path('b_pashkevich_catalog_admin_product_edit', { 'id': product.id }) }}">
-                        <img src="{{ product.img }}" alt="img" style="width: 220px; height: 220px;">
-                    </a><br>
-                    <div class="description">
-                        {{ product.shortDescription }}<br>
-                        {{ product.price }} $
-                    </div>
+                    <h2>
+                        <a href="{{ path('b_pashkevich_catalog_admin_attributeValue_edit', { 'id': attributeValue.id }) }}">
+                            Value: {{ attributeValue.value }}
+                            <br>
+                            Attribute: {{ attributeValue.attributeName }}
+                        </a>
+                    </h2>
                 </div>
             </div>
         {% endfor %}

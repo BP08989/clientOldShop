@@ -1,0 +1,36 @@
+{% extends 'default/admin.html.twig' %}
+
+{% block title %}
+    Symfony Shop
+{% endblock %}
+
+{% block stylesheets %}
+    <link type="text/css" rel="stylesheet" href="../../css/styles.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap.css"/>
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block header %}
+    Category
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3">
+            <div class="metrics text-muted" href="#map1">
+                <form method="post" action="/admin/save">
+                    <label for="name">Name: </label>
+                    <input type="text" id="name" class="form-control" name="name" value="{{ category.name }}">
+
+                    <button class="shopping-cart" type="submit" style="width: 330px;">Save</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-3">
+        </div>
+    </div>
+{% endblock %}

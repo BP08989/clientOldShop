@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block header %}
-    Products
+    Configurable Products
 {% endblock %}
 
 {% block main %}
@@ -22,7 +22,7 @@
             <div class="metrics text-muted" href="#map1">
                 <h2>
                     <a href="/new">
-                        Add Product
+                        Add Config Product
                     </a>
                 </h2>
             </div>
@@ -44,7 +44,7 @@
             <div class="col-sm-3">
                 <div class="metrics text-muted" href="#map1">
                     <h2>{{ product.name }}</h2>
-                    <a href="{{ path('b_pashkevich_catalog_admin_product_edit', { 'id': product.id }) }}">
+                    <a href="{{ path('b_pashkevich_catalog_admin_configurableProduct_edit', { 'id': product.id }) }}">
                         <img src="{{ product.img }}" alt="img" style="width: 220px; height: 220px;">
                     </a><br>
                     <div class="description">
