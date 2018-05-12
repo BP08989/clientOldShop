@@ -22,7 +22,7 @@
         </div>
         <div class="col-sm-3">
             <div class="metrics text-muted" href="#map1">
-                <form method="post" action="/admin/save">
+                <form method="post" action="/admin/configurableProduct/save">
                     {% for requireAttribute in requireAttributes %}
                         <label for="{{ requireAttribute.name }}" style="min-width: 120px;  margin-left: -10px;">{{ requireAttribute.name }}</label>
 
@@ -49,6 +49,8 @@
 
                     <button class="shopping-cart" type="submit" style="width: 330px;">Save</button>
                 </form>
+
+                <button class="shopping-cart" href="/admin/configurableProduct/delete" style="width: 330px;">Delete</button>
             </div>
         </div>
         <div class="col-sm-3">

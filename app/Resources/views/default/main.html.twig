@@ -26,20 +26,20 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li><a href="/user/{{ app.user.id }}/show">Profile</a></li>
+                    <li><a href="/user/{{ app.user.id }}/show">Профиль</a></li>
                 {% else %}
-                    <li><a href="/login">Profile</a></li>
+                    <li><a href="/login">Профиль</a></li>
                 {% endif %}
-                <li><a href="/cart">My cart</a></li>
+                <li><a href="/cart">Карзина</a></li>
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li><a href="/logout">Sign Out</a></li>
+                    <li><a href="/logout">Выйти</a></li>
                 {% else %}
-                    <li><a href="/login">Sign In</a></li>
+                    <li><a href="/login">Войти</a></li>
                 {% endif %}
             </ul>
-            <form class="navbar-form navbar-right" method="post" action="/search">
-                <input type="text" id="search" class="form-control" placeholder="Search..." name="search">
-            </form>
+            {#<form class="navbar-form navbar-right" method="post" action="/search">#}
+                {#<input type="text" id="search" class="form-control" placeholder="Поиск..." name="search">#}
+            {#</form>#}
         </div>
     </div>
 </nav>
@@ -47,7 +47,7 @@
 <main class="container-fluid" id="main">
     <div class="row">
         <div class="col-lg-2 sidebar sidebar-offcanvas" id="sidebar">
-            <h2><a href="/category" style="color: #5EAD2A">Categories</a></h2>
+            <h2><a href="/category" style="color: #5EAD2A">Категории</a></h2>
             <ul class="nav nav-sidebar">
                 {% block menu %}{% endblock %}
                 {% for category in categories %}

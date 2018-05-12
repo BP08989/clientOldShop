@@ -103,7 +103,7 @@ body {
   transition: margin 0.2s linear;
 }
   .main .page-header {
-    margin-top: 0;
+    margin-top: -120px;
   }
 
 @media (max-width: 1200px) {

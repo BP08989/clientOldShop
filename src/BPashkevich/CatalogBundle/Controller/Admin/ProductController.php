@@ -30,4 +30,27 @@ class ProductController extends Controller
             'categories' => $categories
         ));
     }
+
+    public function saveAction(Request $request)
+    {
+        Methods::sendRequest('http://127.0.0.1:8000/api/setProductById', array(
+            'requestData' => $request->request->all()
+        ));
+
+        return $this->redirectToRoute('admin/product');
+    }
+
+    public function deleteAction($id)
+    {
+        Methods::sendRequest('http://127.0.0.1:8000/api/deleteProductById', array('id' => $id));
+
+        return $this->redirectToRoute('admin/product');
+    }
+
+    public function deleteALLAction()
+    {
+        Methods::sendRequest('http://127.0.0.1:8000/api/deleteALLProducts');
+
+        return $this->redirectToRoute('admin/product');
+    }
 }

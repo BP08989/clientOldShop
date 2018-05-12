@@ -27,4 +27,34 @@ class AttributeValueController extends Controller
             'attributes' => $attributes
         ));
     }
+
+    public function saveAction($id = null, $value = null, $attribute = null)
+    {
+        $attributeValue = Methods::sendRequest('http://127.0.0.1:8000/api/setAttributeValueById', array(
+            'id' => $id,
+            'value' => $value,
+            'attribute' => $attribute,
+        ));
+
+        $attributes = Methods::sendRequest('http://127.0.0.1:8000/api/getALLAttributes');
+
+        return $this->render('admin/attributeValue/edit.html.twig', array(
+            'attributeValue' => $attributeValue,
+            'attributes' => $attributes
+        ));
+    }
+
+    public function deleteAction($id)
+    {
+        Methods::sendRequest('http://127.0.0.1:8000/api/deleteAttributeValueById', array('id' => $id));
+
+        return $this->redirectToRoute('admin/attributeValue');
+    }
+
+    public function deleteALLAction()
+    {
+        Methods::sendRequest('http://127.0.0.1:8000/api/deleteALLAttributeValues');
+
+        return $this->redirectToRoute('admin/attributeValues');
+    }
 }

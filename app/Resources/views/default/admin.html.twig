@@ -26,9 +26,9 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li><a href="/logout">Sign Out</a></li>
-                {% else %}
                     <li><a href="/login">Sign In</a></li>
+                {% else %}
+                    <li><a href="/logout">Sign Out</a></li>
                 {% endif %}
             </ul>
         </div>

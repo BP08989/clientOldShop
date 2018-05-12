@@ -97,3 +97,75 @@ b_pashkevich_catalog_admin_category:
 b_pashkevich_catalog_admin_category_edit:
     path:     /admin/category/{id}
     defaults: { _controller: BPashkevichCatalogBundle:Admin/Category:edit }
+
+b_pashkevich_catalog_admin_attribute_save:
+    path:     /admin/attribute/save/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Attribute:save }
+
+b_pashkevich_catalog_admin_attributeValue_save:
+    path:     /admin/attributeValue/save/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/AttributeValue:save }
+
+b_pashkevich_catalog_admin_category_save:
+    path:     /admin/category/save/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Category:save }
+
+b_pashkevich_catalog_admin_configurable_product_save:
+    path:     /admin/configurableProduct/save/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/ConfigurableProduct:save }
+
+b_pashkevich_catalog_admin_product_save:
+    path:     /admin/product/save/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Product:save }
+
+b_pashkevich_catalog_admin_user_save:
+    path:     /admin/user/save/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/User:save }
+
+b_pashkevich_catalog_admin_attribute_delete:
+    path:     /admin/attribute/delete/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Attribute:delete }
+
+b_pashkevich_catalog_admin_attributeValue_delete:
+    path:     /admin/attributeValue/delete/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/AttributeValue:delete }
+
+b_pashkevich_catalog_admin_category_delete:
+    path:     /admin/category/delete/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Category:delete }
+
+b_pashkevich_catalog_admin_configurable_product_delete:
+    path:     /admin/configurableProduct/delete/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/ConfigurableProduct:delete }
+
+b_pashkevich_catalog_admin_product_delete:
+    path:     /admin/product/delete/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Product:delete }
+
+b_pashkevich_catalog_admin_user_delete:
+    path:     /admin/user/delete/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/User:delete }
+
+b_pashkevich_catalog_admin_attribute_deleteALL:
+    path:     /admin/attribute/deleteALL/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Attribute:deleteALL }
+
+b_pashkevich_catalog_admin_attributeValue_deleteALL:
+    path:     /admin/attributeValue/deleteALL/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/AttributeValue:deleteALL }
+
+b_pashkevich_catalog_admin_category_deleteALL:
+    path:     /admin/category/deleteALL/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Category:deleteALL }
+
+b_pashkevich_catalog_admin_configurable_product_deleteALL:
+    path:     /admin/configurableProduct/deleteALL/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/ConfigurableProduct:deleteALL }
+
+b_pashkevich_catalog_admin_product_deleteALL:
+    path:     /admin/product/deleteALL/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/Product:deleteALL }
+
+b_pashkevich_catalog_admin_user_deleteALL:
+    path:     /admin/user/deleteALL/{id}
+    defaults: { _controller: BPashkevichCatalogBundle:Admin/User:deleteALL }
